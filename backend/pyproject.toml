@@ -8,11 +8,19 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "alembic>=1.20.0",
     "fastapi[standard]>=0.141.1",
+    "psycopg[binary]>=3.3.6",
+    "pydantic-settings>=2.15.0",
+    "pyjwt[crypto]>=2.15.0",
+    "sqlalchemy>=2.0.54",
 ]
 
 [project.scripts]
 backend = "backend:main"
+
+[tool.vercel]
+entrypoint = "app.main:app"
 
 [build-system]
 requires = ["uv_build>=0.12.6,<0.13.0"]
